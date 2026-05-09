@@ -120,6 +120,7 @@ operator_group_3:
   - reduce_all
   - reduce_any
   - reduce_log_sum_exp
+  - sinh
 operator_group_4:
   - rfft1_d
   - right_shift
