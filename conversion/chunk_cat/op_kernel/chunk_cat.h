@@ -544,6 +544,9 @@ private:
     {
         SetFlag<HardEvent::MTE2_V>(event_);
         WaitFlag<HardEvent::MTE2_V>(event_);
+        if (ubLoopInfo.totalUbColAlign == 0) {
+            return;
+        }
         if constexpr (NEAD_CAST) {
             uint32_t castCount = ubLoopInfo.currentUbRowFactor * ubLoopInfo.totalUbColAlign;
             DoCast(ubLoopInfo, castCount);
