@@ -17,9 +17,9 @@
 #define OPS_MATH_INFERSHAPE_REDUCE_UTIL_H
 
 #include "exe_graph/runtime/infer_shape_context.h"
-#include "op_common/op_host/util/shape_util.h"
-#include "op_common/log/log.h"
-#include "op_common/op_host/util/opbase_export.h"
+#include "util/shape_util.h"
+#include "log/log.h"
+#include "op_host/util/opbase_export.h"
 
 namespace Ops {
 namespace Base {

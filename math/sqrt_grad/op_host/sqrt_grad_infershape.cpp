@@ -14,7 +14,7 @@
  */
 
 #include "register/op_impl_registry.h"
-#include "op_common/op_host/infershape_elewise_util.h"
+#include "infershape_elewise_util.h"
 using namespace ge;
 namespace ops {
 IMPL_OP_INFERSHAPE(SqrtGrad).InferShape(Ops::Base::InferShape4Elewise);

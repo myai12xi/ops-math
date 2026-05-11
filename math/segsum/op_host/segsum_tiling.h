@@ -22,7 +22,7 @@
 #include "register/op_impl_registry.h"
 #include "op_host/tiling_templates_registry.h"
 #include "platform/platform_ascendc.h"
-#include "op_common/op_host/util/platform_util.h"
+#include "util/platform_util.h"
 
 namespace optiling {
 

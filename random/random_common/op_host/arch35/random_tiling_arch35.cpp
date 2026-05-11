@@ -18,7 +18,7 @@
 #include "op_host/tiling_templates_registry.h"
 #include "log/log.h"
 #include "util/math_util.h"
-#include "op_common/op_host/util/platform_util.h"
+#include "util/platform_util.h"
 #include "random_tiling_base.h"
 
 namespace optiling {

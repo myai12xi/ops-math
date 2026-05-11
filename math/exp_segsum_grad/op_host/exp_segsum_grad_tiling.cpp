@@ -18,7 +18,7 @@
 #include "register/op_impl_registry.h"
 #include "op_host/tiling_templates_registry.h"
 #include "platform/platform_ascendc.h"
-#include "op_common/op_host/util/platform_util.h"
+#include "util/platform_util.h"
 #include "register/op_def_registry.h"
 #include "tiling/tiling_api.h"
 #include "exp_segsum_grad_tiling.h"

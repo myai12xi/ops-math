@@ -14,7 +14,7 @@
 
 #include "tensor_equal_tiling_arch35.h"
 #include "log/log.h"
-#include "op_common/op_host/util/platform_util.h"
+#include "util/platform_util.h"
 #include "register/op_impl_registry.h"
 #include "register/tilingdata_base.h"
 #include "util/math_util.h"

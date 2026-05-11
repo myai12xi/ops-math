@@ -16,7 +16,7 @@
 #define CONCAT_INFERSHAPE_H_
 #include "log/log.h"
 #include "infershape_broadcast_util.h"
-#include "op_common/op_host/util/shape_util.h"
+#include "util/shape_util.h"
 #include "register/op_impl_registry.h"
 namespace ops {
 constexpr size_t INDEX_CONCAT_DIM = 0;
