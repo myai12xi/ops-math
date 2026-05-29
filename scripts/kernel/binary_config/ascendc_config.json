@@ -633,7 +633,7 @@
     {"name":"SubV2", "compute_units": ["ascend910b"], "auto_sync" : true, "impl_mode" : "high_performance"},
     {"name":"Onehot", "compute_units": ["ascend910b"], "auto_sync" : true, "impl_mode" : "high_performance"},
     {"name":"Erf", "compute_units": ["ascend910b", "ascend950"], "auto_sync" : false, "compile_options": {"ascend950":["--cce-simd-vf-fusion=true", "-mllvm -cce-aicore-dcci-before-kernel-end=false"]}, "impl_mode" : ""},
-    {"name":"Sinh", "compute_units": ["ascend910b"], "auto_sync" : true, "impl_mode" : "high_performance"},
+    {"name":"Sinh", "compute_units": ["ascend910b", "ascend950"], "auto_sync" : true, "impl_mode" : "high_performance"},
     {"name":"MaximumV2", "compute_units": ["ascend910b"], "auto_sync" : true, "impl_mode" : "high_performance"},
     {"name":"ReflectionPad1dV2", "compute_units": ["ascend910b"], "auto_sync":true, "impl_mode" : "high_performance"},
     {"name":"AxpyV3", "compute_units": ["ascend910b"], "auto_sync" : true, "impl_mode" : "high_performance"},

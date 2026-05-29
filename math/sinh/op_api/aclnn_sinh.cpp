@@ -1,12 +1,12 @@
 /**
- * Copyright (c) 2025 Huawei Technologies Co., Ltd.
- * This program is free software, you can redistribute it and/or modify it under the terms and conditions of
- * CANN Open Software License Agreement Version 2.0 (the "License").
- * Please refer to the License for details. You may not use this file except in compliance with the License.
- * THIS SOFTWARE IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED,
- * INCLUDING BUT NOT LIMITED TO NON-INFRINGEMENT, MERCHANTABILITY, OR FITNESS FOR A PARTICULAR PURPOSE.
- * See LICENSE in the root of the software repository for the full text of the License.
- */
+ * Copyright (c) 2025 Huawei Technologies Co., Ltd.
+ * This program is free software, you can redistribute it and/or modify it under the terms and conditions of
+ * CANN Open Software License Agreement Version 2.0 (the "License").
+ * Please refer to the License for details. You may not use this file except in compliance with the License.
+ * THIS SOFTWARE IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+ * INCLUDING BUT NOT LIMITED TO NON-INFRINGEMENT, MERCHANTABILITY, OR FITNESS FOR A PARTICULAR PURPOSE.
+ * See LICENSE in the root of the software repository for the full text of the License.
+ */
 
 #include "aclnn_sinh.h"
 #include "sinh.h"
@@ -57,7 +57,6 @@ static aclnnStatus CheckParams(const aclTensor *self, const aclTensor *out)
     CHECK_RET(CheckNotNull2Tensor(self, out), ACLNN_ERR_PARAM_NULLPTR);
 
     // 2. 检查输入的数据类型是否在API支持的数据类型范围之内，需要根据api定义校验
-    // 检查self的数据类型是否在sinh算子的支持列表内
     auto supportList = GetDtypeSupportListV2(ASCEND910B_DTYPE_DTYPE_SUPPORT_LIST, ASCEND910_DTYPE_DTYPE_SUPPORT_LIST);
     auto outSupportList = GetDtypeSupportListV2(ASCEND910B_DTYPE_OUT_LIST, ASCEND910_DTYPE_OUT_LIST);
     CHECK_RET(CheckDtypeValid1In1Out(self, out, supportList, outSupportList), ACLNN_ERR_PARAM_INVALID);
@@ -134,6 +133,7 @@ aclnnStatus aclnnSinhGetWorkspaceSize(const aclTensor *self, aclTensor *out, uin
     aclOpExecutor **executor)
 {
     L2_DFX_PHASE_1(aclnnSinh, DFX_IN(self), DFX_OUT(out));
+    OP_LOGI("**************** custom_math sinh aclnn invoked ****************");
     return ExecSinhGetWorkspaceSize(self, out, workspaceSize, executor);
 }
 
