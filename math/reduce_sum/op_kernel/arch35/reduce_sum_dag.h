@@ -36,6 +36,19 @@ struct ReduceSumDag {
     using MemCfg = MemOptCfg<MemLevel::LEVEL_2>;
     using OpDag = DAGSch<Outputs, void, MemCfg>;
 };
+
+template <typename T, typename PromteT>
+struct ReduceSumBoolDag {
+    using OpCopyIn0 = Bind<Vec::CopyIn<int8_t>, Placeholder::In0<int8_t>>;
+    using Cast0 = Bind<Vec::Cast<half, int8_t, 0>, OpCopyIn0>;
+    using Cast1 = Bind<Vec::Cast<float, half, 0>, Cast0>;
+    using Cast2 = Bind<Vec::Cast<int64_t, float, 1>, Cast1>;
+    using ReduceOp0 = Bind<Vec::ReduceSumOp<int64_t>, Cast2>;
+    using OpCopyOut = Bind<Vec::CopyOut<int64_t>, Placeholder::Out0<int64_t>, ReduceOp0>;
+    using Outputs = Elems<OpCopyOut>;
+    using MemCfg = MemOptCfg<MemLevel::LEVEL_2>;
+    using OpDag = DAGSch<Outputs, void, MemCfg>;
+};
 }  // namespace ReduceSum
 
 #endif

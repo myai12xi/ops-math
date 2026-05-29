@@ -43,4 +43,3 @@
 | 调用方式   | 样例代码           | 说明                                         |
 | ---------------- | --------------------------- | --------------------------------------------------- |
 | aclnn接口 | [test_aclnn_reduce_sum](./examples/test_aclnn_reduce_sum.cpp) | 通过[aclnnReduceSum](docs/aclnnReduceSum.md)接口方式调用ReduceSum算子。 |
-| 图模式调用  | [test_geir_reduce_sum.cpp](./examples/test_geir_reduce_sum.cpp) | 通过GE IR图模式调用ReduceSum算子。 |
