@@ -28,6 +28,7 @@ namespace optiling {
 static constexpr int32_t SIZE8 = 8;
 static constexpr int32_t SIZE4 = 4;
 static constexpr int32_t SIZE2 = 2;
+static constexpr int32_t SIZE1 = 1;
 static ge::graphStatus DoTiling(gert::TilingContext* context, ReduceOpInputParam& opInput, ReduceTilingKey& key)
 {
     ge::graphStatus status = ge::GRAPH_FAILED;
@@ -38,6 +39,8 @@ static ge::graphStatus DoTiling(gert::TilingContext* context, ReduceOpInputParam
         status = Tiling4ReduceOp<ReduceSum::ReduceSumDag<float, float>::OpDag>(context, opInput, key);
     } else if (ge::GetSizeByDataType(opInput.inputDtype) == SIZE2) {
         status = Tiling4ReduceOp<ReduceSum::ReduceSumDag<half, float>::OpDag>(context, opInput, key);
+    } else if (ge::GetSizeByDataType(opInput.inputDtype) == SIZE1) {
+        status = Tiling4ReduceOp<ReduceSum::ReduceSumBoolDag<bool, int64_t>::OpDag>(context, opInput, key);
     }
     OP_CHECK_IF(
         (status == ge::GRAPH_FAILED),

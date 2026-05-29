@@ -15,17 +15,21 @@
 #include "register/op_def_registry.h"
 
 namespace ops {
-static const std::vector<ge::DataType> dataType = {ge::DT_FLOAT16, ge::DT_FLOAT,   ge::DT_BF16,  ge::DT_INT32,
-                                                   ge::DT_INT64,   ge::DT_FLOAT16, ge::DT_FLOAT, ge::DT_BF16,
-                                                   ge::DT_INT32,   ge::DT_INT64};
+static const std::vector<ge::DataType> dataType = {ge::DT_FLOAT16, ge::DT_FLOAT,   ge::DT_BF16,    ge::DT_INT32,
+                                                   ge::DT_INT64,   ge::DT_BOOL,    ge::DT_FLOAT16, ge::DT_FLOAT, 
+                                                   ge::DT_BF16,    ge::DT_INT32,   ge::DT_INT64,   ge::DT_BOOL};
+                            
+static const std::vector<ge::DataType> yDataType = {ge::DT_FLOAT16, ge::DT_FLOAT,   ge::DT_BF16,    ge::DT_INT32,
+                                                   ge::DT_INT64,   ge::DT_INT64,    ge::DT_FLOAT16, ge::DT_FLOAT, 
+                                                   ge::DT_BF16,    ge::DT_INT32,   ge::DT_INT64,    ge::DT_INT64};
 
 static const std::vector<ge::Format> format = {ge::FORMAT_ND, ge::FORMAT_ND, ge::FORMAT_ND, ge::FORMAT_ND,
                                                ge::FORMAT_ND, ge::FORMAT_ND, ge::FORMAT_ND, ge::FORMAT_ND,
-                                               ge::FORMAT_ND, ge::FORMAT_ND};
+                                               ge::FORMAT_ND, ge::FORMAT_ND, ge::FORMAT_ND, ge::FORMAT_ND};
 
 static const std::vector<ge::DataType> axesDataType = {ge::DT_INT32, ge::DT_INT32, ge::DT_INT32, ge::DT_INT32,
-                                                       ge::DT_INT32, ge::DT_INT64, ge::DT_INT64, ge::DT_INT64,
-                                                       ge::DT_INT64, ge::DT_INT64};
+                                                       ge::DT_INT32, ge::DT_INT32, ge::DT_INT64, ge::DT_INT64, 
+                                                       ge::DT_INT64, ge::DT_INT64, ge::DT_INT64, ge::DT_INT64};
 
 class ReduceSum : public OpDef {
 public:
@@ -35,7 +39,7 @@ public:
 
         this->Input("axes").ParamType(REQUIRED).ValueDepend(OPTIONAL).DataType(axesDataType).UnknownShapeFormat(format);
 
-        this->Output("y").ParamType(REQUIRED).DataType(dataType).UnknownShapeFormat(format);
+        this->Output("y").ParamType(REQUIRED).DataType(yDataType).UnknownShapeFormat(format);
 
         this->Attr("keep_dims").AttrType(OPTIONAL).Bool(false);
         this->Attr("noop_with_empty_axes").AttrType(OPTIONAL).Bool(true);
