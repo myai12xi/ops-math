@@ -20,8 +20,8 @@
  */
 #include "dynamic_stitch_tiling_arch35.h"
 #include "log/log.h"
-#include "op_common/op_host/util/shape_util.h"
-#include "op_common/op_host/util/platform_util.h"
+#include "util/shape_util.h"
+#include "util/platform_util.h"
 #include "op_api/op_util.h"
 #include "register/op_impl_registry.h"
 #include "op_host/tiling_templates_registry.h"

@@ -27,7 +27,7 @@
 #include "op_host/tiling_base.h"
 #include "../../op_kernel/arch35/dynamic_stitch_tiling_def.h"
 #include "platform/platform_info.h"
-#include "op_common/op_host/util/math_util.h"
+#include "op_host/util/math_util.h"
 #include "op_host/tiling_util.h"
 
 using namespace Ops::Math::OpTiling;

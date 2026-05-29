@@ -18,7 +18,7 @@
 #include "base/context_builder/op_tiling_context_builder.h"
 #include "platform/platform_infos_def.h"
 #include "platform/platform_ascendc.h"
-#include "op_common/op_host/util/platform_util.h"
+#include "util/platform_util.h"
 #include "op_host/util/math_util.h"
 #include "op_host/tiling_util.h"
 #include "stateless_randperm_tiling_for_sort.h"

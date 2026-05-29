@@ -15,7 +15,7 @@
 
 #include "platform/platform_infos_def.h"
 #include "platform/platform_ascendc.h"
-#include "op_common/op_host/util/platform_util.h"
+#include "util/platform_util.h"
 #include "random/random_common/op_host/arch35/random_tiling_base.h"
 #include "exe_graph/runtime/shape.h"
 #include "op_host/tiling_base.h"

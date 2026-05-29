@@ -24,7 +24,7 @@
 
 #include "register/op_impl_registry.h"
 #include "exe_graph/runtime/infer_shape_context.h"
-#include "op_common/log/log.h"
+#include "log/log.h"
 
 using namespace ge;
 

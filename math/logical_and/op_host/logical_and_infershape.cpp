@@ -14,7 +14,7 @@
  */
 
 #include "register/op_impl_registry.h"
-#include "op_common/op_host/infershape_broadcast_util.h"
+#include "infershape_broadcast_util.h"
 
 using namespace ge;
 namespace ops {

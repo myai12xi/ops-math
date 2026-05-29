@@ -15,7 +15,7 @@
 #include <random>
 #include "platform/platform_infos_def.h"
 #include "platform/platform_ascendc.h"
-#include "op_common/op_host/util/platform_util.h"
+#include "util/platform_util.h"
 #include "random_standard_normal_v2_tiling_arch35.h"
 #include "../../../random_common/op_host/arch35/random_tiling_base.h"
 #include "../../../random_common/op_host/arch35/random_tiling_arch35.h"
